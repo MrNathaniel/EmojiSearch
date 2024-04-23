@@ -5,16 +5,22 @@ import "./App.css";
 function App() {
   return (
     <>
-      <div>
-        <h1>EmojiSearch</h1>
-        <input
-          type="text"
-          placeholder="what emoji are you looking for ?"
-        ></input>
+      <div className="container">
+        <div className="header">
+          <h1>EmojiSearch</h1>
+          <input
+            type="text"
+            placeholder="what emoji are you looking for ?"
+          ></input>
+        </div>
+        {data.map((elem, index) => {
+          return (
+            <p key={index}>
+              {elem.symbol} {elem.title}
+            </p>
+          );
+        })}
       </div>
-      {data.map((elem, index) => {
-        return <p key={index} elem={elem}></p>;
-      })}
     </>
   );
 }
